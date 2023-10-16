@@ -30,7 +30,10 @@ public class Path : MonoBehaviour
                 pointsIndex+= 1;
             }
 
-
+          //if (pointsIndex == Points.Length)
+          //{
+          //    pointsIndex = 0;
+          //}
 
         }
     }
