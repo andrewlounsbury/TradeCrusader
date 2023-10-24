@@ -7,19 +7,19 @@ using static UnityEngine.GraphicsBuffer;
 public class CameraMovement : MonoBehaviour
 {
     [Header("Variables")]
-    public Transform target;
-    public Vector3 cameraOffset;
-    public float speed;
+    public Transform Target;
+    public Vector3 CameraOffset;
+    public float Speed;
     Vector3 velocity = Vector3.zero;
-    public float moveSpeed = 5.0f;
-    public bool followPlayer = false;
+    public float MoveSpeed = 5.0f;
 
-    [Header("Camera clampling")]
+    [Header("Camera clamping")]
     public float xMin;
     public float xMax;
     public float yMin;
     public float yMax;
 
+    private bool followPlayer = false;
 
     void Update()
     {
@@ -43,19 +43,29 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
-    public void SetShouldFollowPlayer(bool shouldFollow) => followPlayer = shouldFollow;
+    public void ToggleFollow()
+    {
+        followPlayer = !followPlayer;
+    }
 
     private void FollowPlayer()
     {
-        //TODO: Implement follow player controls
+        if (Target != null)
+        {
+            Vector3 targetPosition = Target.position + CameraOffset;
+            targetPosition.x = Mathf.Clamp(targetPosition.x, xMin, xMax);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, yMin, yMax);
+            targetPosition.z = transform.position.z;
+
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Speed * Time.deltaTime);
+        }
     }
 
     public void MoveWithDirectionals(Vector3 moveDirection)
     {
         moveDirection.Normalize();
 
-        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
-
+        transform.Translate(moveDirection * MoveSpeed * Time.deltaTime);
 
         if (transform.position.x < xMin)
         {
@@ -75,18 +85,4 @@ public class CameraMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yMax, transform.position.z);
         }
     }
-
-    //private void FixedUpdate()
-    //{
-    //    float xClamp = Mathf.Clamp(target.position.x, xMin, xMax);
-    //    float yClamp = Mathf.Clamp(target.position.y, yMin, yMax);
-    //
-    //    Vector3 targetPosition = target.position + cameraOffset;
-    //    Vector3 clampedPosition = new Vector3(Mathf.Clamp(targetPosition.x, xMin, xMax), Mathf.Clamp(targetPosition.y, yMin, yMax), -1);
-    //    Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, clampedPosition, ref velocity, speed * Time.deltaTime);
-    //
-    //    transform.position = smoothPosition;
-    //}
-    //
-
 }
