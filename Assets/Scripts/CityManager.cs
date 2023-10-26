@@ -12,6 +12,9 @@ public class CityManager : MonoBehaviour
     [SerializeField] private Dictionary<Resource, int> resourceList = new();
     [SerializeField] private List<Resource> resources = new List<Resource>();
     [SerializeField] private List<int> resourceAmount = new List<int>();
+
+    [SerializeField] private Player player;
+    [SerializeField] private Node cityNode; 
     //On start clone the scriptable objects data, so you can alter it without writing to disk
 
 
@@ -24,40 +27,41 @@ public class CityManager : MonoBehaviour
         }
     }
 
+    private void OnMouseDown()
+    {
+        player.SetTargetNode(cityNode);
+    }
+
     //function to alter the value of a specified scriptable object
     public void Buy(Resource resource, int amount)
     {
-        if (resourceList.ContainsKey(resource) && resourceList[resource] >= amount)
+        if (resourceList.ContainsKey(resource) && resourceList[resource] >= amount && player.GetPlayerPurse().CanRemoveGold(amount * resource.buyRate))
         {
+            player.GetPlayerPurse().RemoveGold(amount * resource.buyRate);
             resourceList[resource] -= amount; 
+            player.GetPlayerCargo().AddResource(resource, amount);
         }
     }
 
     public void Buy(Resource resource)
     {
-        if (resourceList.ContainsKey(resource) && resourceList[resource] >= 10)
-        {
-            resourceList[resource] -= 10;
-        }
+        //make variable for resource stack amount instaead of flat 10 
+        Buy(resource, 10 );
     }
 
     public void Sell(Resource resource, int amount)
     {
-        if (resourceList.ContainsKey(resource))
+        if (resourceList.ContainsKey(resource) && player.GetPlayerCargo().RemoveResource(resource, amount))
         {
+            player.GetPlayerPurse().AddGold(amount * resource.sellRate);
             resourceList[resource] += amount; 
         }
     }
 
     public void Sell(Resource resource)
     {
-        if (resourceList.ContainsKey(resource))
-        {
-            Debug.Log(resourceList[resource]);
-            resourceList[resource] += 10;
-        }
+        Sell(resource, 10);
     }
-
 
     private int ResourceAmount(Resource resource)
     {

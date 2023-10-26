@@ -10,7 +10,13 @@ public class Player : MonoBehaviour
     [SerializeField] private Node targetNode;
 
     [SerializeField] private BreadthFirstSearch BFS;
+
     private bool isMoving = false;
+
+    [SerializeField] private PlayerPurse playerPurse;
+    [SerializeField] private PlayerCargo cargo;
+
+    [SerializeField] private float moveSpeed = 3;
 
     private void Start()
     {
@@ -20,6 +26,24 @@ public class Player : MonoBehaviour
     private void Update()
     {
        MoveToTarget();
+    }
+
+    public PlayerPurse GetPlayerPurse() => playerPurse;
+    public PlayerCargo GetPlayerCargo() => cargo;
+
+    public void SetTargetNode(Node target)
+    {
+        if (isMoving)
+        {
+            return; 
+        }
+
+        if (targetNode != target)
+        {
+            isMoving = true; 
+        }
+
+        targetNode = target; 
     }
 
     private void MoveToTarget()
@@ -34,16 +58,16 @@ public class Player : MonoBehaviour
         }
 
         // Check if you need to set next node
-        if (transform.position == currentNode.transform.position)
+        if (Vector3.Distance(transform.position, currentNode.transform.position) <= 0.01f)
         {
             currentNode = BFS.PathChart[currentNode];
         }
 
         // Move
-        transform.position += (currentNode.transform.position - transform.position).normalized * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, currentNode.transform.position, moveSpeed * Time.deltaTime); 
         
         // Check if you've hit your goal
-        if (transform.position == targetNode.transform.position)
+        if (Vector3.Distance(transform.position, targetNode.transform.position) <= 0.01f)
         {
             isMoving = false;
             BFS.PathChart.Clear();
