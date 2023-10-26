@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Node currentNode;
     [SerializeField] private Node targetNode;
 
-    [SerializeField] private BreadthFirstSearch BFS; 
+    [SerializeField] private BreadthFirstSearch BFS;
     private bool isMoving = false;
 
     private void Start()
@@ -19,22 +19,36 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-       if (!isMoving)
+       MoveToTarget();
+    }
+
+    private void MoveToTarget()
+    {
+        // Return if not moving
+        if (!isMoving) return;
+
+        // Create chart if needed
+        if (BFS.PathChart.Count == 0 && targetNode)
         {
-            isMoving = true;
-
             BFS.BFS(targetNode);
-
-            while (currentNode != targetNode)
-            {
-                currentNode = BFS.PathChart[currentNode];
-
-                while (transform.position != currentNode.transform.position)
-                {
-                    transform.position += (currentNode.transform.position - transform.position).normalized * 10f * Time.deltaTime;
-                }
-            }
         }
+
+        // Check if you need to set next node
+        if (transform.position == currentNode.transform.position)
+        {
+            currentNode = BFS.PathChart[currentNode];
+        }
+
+        // Move
+        transform.position += (currentNode.transform.position - transform.position).normalized * Time.deltaTime;
+        
+        // Check if you've hit your goal
+        if (transform.position == targetNode.transform.position)
+        {
+            isMoving = false;
+            BFS.PathChart.Clear();
+        }
+
     }
 
     //handle clicking of node in its own function here

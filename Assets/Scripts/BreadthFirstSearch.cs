@@ -38,8 +38,6 @@ public class BreadthFirstSearch : MonoBehaviour
                 PathChart.Add(child, currentNode);
             }
         }
-
-
     }
 
 }
