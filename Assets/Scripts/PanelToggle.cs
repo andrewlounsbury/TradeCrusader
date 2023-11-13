@@ -10,7 +10,7 @@ public class PanelToggle : MonoBehaviour
     public float moveSpeed = 5.0f;
 
     private bool isOnScreen = false;
-    private bool isMoving = false;
+    public bool isMoving = false;
 
     private void Start()
     {
@@ -20,32 +20,10 @@ public class PanelToggle : MonoBehaviour
         isMoving = false; 
 
     }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D collider = GetComponent<Collider2D>();
-
-            if (collider.OverlapPoint(mousePosition))
-            {
-               isMoving = true;
-            }
-        }
-
-        if (isMoving)
-        {
-            if (isOnScreen)
-            {
-                MovePanel(offScreenPosition);
-                gameObject.transform.localScale = new Vector3(45, -20, 0); 
-            }
-            else
-            {
-                MovePanel(onScreenPosition);
-                gameObject.transform.localScale = new Vector3(45, 20, 0);
-            }
-        }
+        Toggle();
     }
 
     private void MovePanel(Vector2 targetPosition)
@@ -60,4 +38,43 @@ public class PanelToggle : MonoBehaviour
             isMoving = false; 
         }
     }
+
+    public void Toggle()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D collider = GetComponent<Collider2D>();
+
+            if (collider.OverlapPoint(mousePosition))
+            {
+                isMoving = true;
+            }
+        }
+
+        if (isMoving)
+        {
+            if (isOnScreen)
+            {
+                MovePanel(offScreenPosition);
+                gameObject.transform.localScale = new Vector3(45, -20, 0);
+            }
+            else
+            {
+                MovePanel(onScreenPosition);
+                gameObject.transform.localScale = new Vector3(45, 20, 0);
+            }
+        }
+    }
+
+    public void OpenPanel()
+    {
+
+        if (isMoving)
+        {
+            MovePanel(onScreenPosition);
+            gameObject.transform.localScale = new Vector3(45, 20, 0);
+        }
+    }
+
 }
