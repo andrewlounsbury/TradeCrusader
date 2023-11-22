@@ -14,10 +14,13 @@ public class LocationSelect : MonoBehaviour
     private bool isClicked = false;
     private bool isOnScreen = false;
     private Vector3 originalScale;
-    private Sprite originalSprite;
-    private SpriteRenderer spriteRenderer;
+    [HideInInspector] public Sprite originalSprite;
+    [HideInInspector] public SpriteRenderer spriteRenderer;
 
-    [SerializeField] private PanelToggle toggle;  
+    [SerializeField] private GameObject _atLocationPanel;
+    [SerializeField] private GameObject _notAtLocationPanel;
+    [SerializeField] private PanelToggle toggle;
+    [SerializeField] private LocationDisplay locationDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +42,10 @@ public class LocationSelect : MonoBehaviour
         if (isClicked)
         {
             toggle.isMoving = true;
+            _atLocationPanel.SetActive(false);
+            _notAtLocationPanel.SetActive(true);
             toggle.OpenPanel();
+            locationDisplay.SelectCity(GetComponent<CityManager>());
             isClicked = false; 
         }
 
@@ -47,7 +53,23 @@ public class LocationSelect : MonoBehaviour
 
     void OnMouseDown()
     {
-        isClicked = true;
+        if (GetComponent<CityManager>().cityNode == locationDisplay.player.GetCurrentNode())
+        {
+            _atLocationPanel.SetActive(true);
+            _notAtLocationPanel.SetActive(false);
+        }
+        else
+        {
+            isClicked = true;
+        }
+
+        var locations = FindObjectsOfType<LocationSelect>();
+
+        foreach (var location in locations)
+        {
+            location.spriteRenderer.sprite = originalSprite;
+            transform.localScale = originalScale;
+        }
 
         spriteRenderer.sprite = clickSprite;
         transform.localScale = originalScale * clickedScale;

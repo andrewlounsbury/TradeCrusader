@@ -8,7 +8,6 @@ public class PlayerCargo : MonoBehaviour
     [SerializeField] private List<Resource> resources = new List<Resource>();
     [SerializeField] private List<int> resourceAmount = new List<int>();
 
-
     // Start is called before the first frame update
     private void Start()
     {

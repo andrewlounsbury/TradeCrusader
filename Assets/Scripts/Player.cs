@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,6 +18,11 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerCargo cargo;
 
     [SerializeField] private float moveSpeed = 3;
+
+    public GameObject atLocationUI;
+    public GameObject notAtLocationUI;
+
+    public PanelToggle panelToggle;
 
     private void Start()
     {
@@ -70,11 +76,24 @@ public class Player : MonoBehaviour
         if (Vector3.Distance(transform.position, targetNode.transform.position) <= 0.01f)
         {
             isMoving = false;
+            notAtLocationUI.SetActive(false);
+            atLocationUI.SetActive(true);
             BFS.PathChart.Clear();
+            panelToggle.isMoving = true; 
+            panelToggle.OpenPanel();
         }
 
     }
 
+    internal Node GetTargetNode()
+    {
+        return targetNode;
+    }
+
+    public Node GetCurrentNode()
+    {
+        return currentNode;
+    }
     //handle clicking of node in its own function here
     //whwenever node is clickeed, do BFS.BFS
 

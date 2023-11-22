@@ -9,10 +9,7 @@ public class Inventory : MonoBehaviour
     public List <ResourceDisplay> inventorySlots;
     public CityManager cityManager;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void SetResourceDsiplay()
     {
         for (int i = 0; i < inventorySlots.Count; i++)
         {
@@ -21,14 +18,15 @@ public class Inventory : MonoBehaviour
             if (cityManager.resources.Count > i)
             {
                 slot.sprite = cityManager.resources[i].icon;
+                slot.color = new Color(1, 1, 1, 1);
                 inventorySlots[i].resource = cityManager.resources[i];
             }
+            else
+            {
+                slot.sprite = null;
+                slot.color = new Color(1, 1, 1, 0);
+                inventorySlots[i].resource = null;
+            }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

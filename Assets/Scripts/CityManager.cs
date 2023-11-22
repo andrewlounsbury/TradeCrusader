@@ -7,14 +7,15 @@ public class CityManager : MonoBehaviour
 {
     //public variables 
     //List of resource scriptable objects 
-
+    public string CityName;
+    public int CityFavor = 0;
     //private variables
     [SerializeField] private Dictionary<Resource, int> resourceList = new();
     [SerializeField] public List<Resource> resources = new List<Resource>();
     [SerializeField] private List<int> resourceAmount = new List<int>();
 
     [SerializeField] private Player player;
-    [SerializeField] private Node cityNode; 
+    public Node cityNode;
     //On start clone the scriptable objects data, so you can alter it without writing to disk
 
 
@@ -27,7 +28,7 @@ public class CityManager : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void BeginVoyage()
     {
         player.SetTargetNode(cityNode);
     }
