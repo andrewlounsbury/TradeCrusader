@@ -19,9 +19,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 3;
 
-    public GameObject atLocationUI;
-    public GameObject notAtLocationUI;
-
+    public GameObject atLocationPanel;
+    public GameObject notAtLocationPanel;
+    public GameObject playerPanel;
     public PanelToggle panelToggle;
 
     private void Start()
@@ -76,8 +76,9 @@ public class Player : MonoBehaviour
         if (Vector3.Distance(transform.position, targetNode.transform.position) <= 0.01f)
         {
             isMoving = false;
-            notAtLocationUI.SetActive(false);
-            atLocationUI.SetActive(true);
+            notAtLocationPanel.SetActive(false);
+            playerPanel.SetActive(false);
+            atLocationPanel.SetActive(true);
             BFS.PathChart.Clear();
             panelToggle.isMoving = true; 
             panelToggle.OpenPanel();

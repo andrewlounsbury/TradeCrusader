@@ -14,7 +14,7 @@ public class LocationDisplay : MonoBehaviour
     public TMP_Text locationName;
     public Slider favor;
     public Image flag; 
-    public Inventory inventroy;
+    public CityInventory inventroy;
 
     public Player player;
 

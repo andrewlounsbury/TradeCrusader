@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCargo : MonoBehaviour
 {
     [SerializeField] private Dictionary<Resource, int> resourceList = new();
-    [SerializeField] private List<Resource> resources = new List<Resource>();
+    [SerializeField] public List<Resource> resources = new List<Resource>();
     [SerializeField] private List<int> resourceAmount = new List<int>();
 
     // Start is called before the first frame update

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour
+public class CityInventory : MonoBehaviour
 {
     
     public List <ResourceDisplay> inventorySlots;
@@ -21,12 +21,12 @@ public class Inventory : MonoBehaviour
                 slot.color = new Color(1, 1, 1, 1);
                 inventorySlots[i].resource = cityManager.resources[i];
             }
-            else
+            /*else
             {
                 slot.sprite = null;
                 slot.color = new Color(1, 1, 1, 0);
                 inventorySlots[i].resource = null;
-            }
+            }*/
         }
     }
 }

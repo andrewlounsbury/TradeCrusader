@@ -17,8 +17,9 @@ public class LocationSelect : MonoBehaviour
     [HideInInspector] public Sprite originalSprite;
     [HideInInspector] public SpriteRenderer spriteRenderer;
 
-    [SerializeField] private GameObject _atLocationPanel;
-    [SerializeField] private GameObject _notAtLocationPanel;
+    [SerializeField] private GameObject atLocationPanel;
+    [SerializeField] private GameObject notAtLocationPanel;
+    [SerializeField] private GameObject playerPanel;
     [SerializeField] private PanelToggle toggle;
     [SerializeField] private LocationDisplay locationDisplay;
 
@@ -42,8 +43,9 @@ public class LocationSelect : MonoBehaviour
         if (isClicked)
         {
             toggle.isMoving = true;
-            _atLocationPanel.SetActive(false);
-            _notAtLocationPanel.SetActive(true);
+            atLocationPanel.SetActive(false);
+            playerPanel.SetActive(false);
+            notAtLocationPanel.SetActive(true);
             toggle.OpenPanel();
             locationDisplay.SelectCity(GetComponent<CityManager>());
             isClicked = false; 
@@ -55,8 +57,9 @@ public class LocationSelect : MonoBehaviour
     {
         if (GetComponent<CityManager>().cityNode == locationDisplay.player.GetCurrentNode())
         {
-            _atLocationPanel.SetActive(true);
-            _notAtLocationPanel.SetActive(false);
+            atLocationPanel.SetActive(true);
+            notAtLocationPanel.SetActive(false);
+            playerPanel.SetActive(false);
         }
         else
         {
@@ -67,8 +70,8 @@ public class LocationSelect : MonoBehaviour
 
         foreach (var location in locations)
         {
-            location.spriteRenderer.sprite = originalSprite;
-            transform.localScale = originalScale;
+            location.spriteRenderer.sprite = location.originalSprite;
+            transform.localScale = location.originalScale;
         }
 
         spriteRenderer.sprite = clickSprite;
