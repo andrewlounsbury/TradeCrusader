@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PanelSwitchButtons : MonoBehaviour
+public class PlayerTabButton : MonoBehaviour
 {
     [SerializeField] private GameObject panelToOpen;
     [SerializeField] private GameObject panelToClose1;

@@ -17,9 +17,7 @@ public class LocationSelect : MonoBehaviour
     [HideInInspector] public Sprite originalSprite;
     [HideInInspector] public SpriteRenderer spriteRenderer;
 
-    [SerializeField] private GameObject atLocationPanel;
-    [SerializeField] private GameObject notAtLocationPanel;
-    [SerializeField] private GameObject playerPanel;
+    [SerializeField] private LocationTabButton locationTabButton; 
     [SerializeField] private PanelToggle toggle;
     [SerializeField] private LocationDisplay locationDisplay;
 
@@ -43,11 +41,12 @@ public class LocationSelect : MonoBehaviour
         if (isClicked)
         {
             toggle.isMoving = true;
-            atLocationPanel.SetActive(false);
+/*            atLocationPanel.SetActive(false);
             playerPanel.SetActive(false);
-            notAtLocationPanel.SetActive(true);
+            notAtLocationPanel.SetActive(true);*/
             toggle.OpenPanel();
             locationDisplay.SelectCity(GetComponent<CityManager>());
+            locationTabButton.UpdatePanels();
             isClicked = false; 
         }
 
@@ -55,16 +54,8 @@ public class LocationSelect : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (GetComponent<CityManager>().cityNode == locationDisplay.player.GetCurrentNode())
-        {
-            atLocationPanel.SetActive(true);
-            notAtLocationPanel.SetActive(false);
-            playerPanel.SetActive(false);
-        }
-        else
-        {
-            isClicked = true;
-        }
+
+        isClicked = true;
 
         var locations = FindObjectsOfType<LocationSelect>();
 
@@ -77,23 +68,5 @@ public class LocationSelect : MonoBehaviour
         spriteRenderer.sprite = clickSprite;
         transform.localScale = originalScale * clickedScale;
     }
-
- //private void MovePanel(Vector2 targetPosition)
- //{
- //    Vector2 currentPosition = panelTransform.anchoredPosition;
- //    panelTransform.anchoredPosition = Vector2.Lerp(currentPosition, targetPosition, Time.deltaTime * moveSpeed);
- //
- //    if (Vector2.Distance(currentPosition, targetPosition) < 1f)
- //    {
- //        panelTransform.anchoredPosition = targetPosition;
- //        isOnScreen = !isOnScreen;
- //        isMoving = false;
- //    }
- //}
-
-
-
-    //need to turn back sprite if click on anoother location
-    //spriteRenderer.sprite = originalSprite;
 
 }

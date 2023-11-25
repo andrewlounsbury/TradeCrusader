@@ -16,4 +16,4 @@ MonoBehaviour:
   weightPerUnit: 1
   buyRate: 10
   sellRate: 7
-  icon: {fileID: 21300000, guid: dd1c550b9a5834946808855b4a19eccf, type: 3}
+  icon: {fileID: 21300000, guid: faed1c8fa19bee44a955fc475b47a017, type: 3}

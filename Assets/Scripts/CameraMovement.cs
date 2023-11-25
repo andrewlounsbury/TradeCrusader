@@ -26,7 +26,7 @@ public class CameraMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0);
+        Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0).normalized;
 
         if (moveDirection.magnitude > 0.01f)
         {
