@@ -30,31 +30,23 @@ public class LocationSelect : MonoBehaviour
         panelTransform.anchoredPosition = offScreenPosition;
 
         toggle.isMoving = false;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //toggle.Toggle(); 
-
         if (isClicked)
         {
             toggle.isMoving = true;
-/*            atLocationPanel.SetActive(false);
-            playerPanel.SetActive(false);
-            notAtLocationPanel.SetActive(true);*/
             toggle.OpenPanel();
             locationDisplay.SelectCity(GetComponent<CityManager>());
             locationTabButton.UpdatePanels();
             isClicked = false; 
         }
-
     }
 
     void OnMouseDown()
     {
-
         isClicked = true;
 
         var locations = FindObjectsOfType<LocationSelect>();

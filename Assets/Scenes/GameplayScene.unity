@@ -10063,6 +10063,7 @@ GameObject:
   - component: {fileID: 1272272503}
   - component: {fileID: 1272272505}
   - component: {fileID: 1272272504}
+  - component: {fileID: 1272272507}
   - component: {fileID: 1272272506}
   m_Layer: 5
   m_Name: AtLocationPanel
@@ -10070,7 +10071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1272272503
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10153,11 +10154,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCity: {fileID: 0}
-  locationName: {fileID: 0}
+  locationName: {fileID: 448480166}
   favor: {fileID: 0}
-  flag: {fileID: 0}
-  inventroy: {fileID: 0}
-  player: {fileID: 0}
+  flag: {fileID: 1583324970}
+  inventroy: {fileID: 1272272507}
+  player: {fileID: 1663645326}
+--- !u!114 &1272272507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272272502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540ca66cfa8d29a4e9aa48e0a1401356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySlots:
+  - {fileID: 1269138674}
+  - {fileID: 1976320209}
+  - {fileID: 879370327}
+  - {fileID: 525622450}
+  cityManager: {fileID: 67257370}
 --- !u!1001 &1273429666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10505,7 +10524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1317543928
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14932,7 +14951,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 8, y: 166.87}
-  m_SizeDelta: {x: 169.19, y: 27.93}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1844896634
 MonoBehaviour:
