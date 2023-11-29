@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Node currentNode;
     [SerializeField] private Node targetNode;
-
+    [SerializeField] private LocationDisplay locationDisplay;
     [SerializeField] private BreadthFirstSearch BFS;
 
     private bool isMoving = false;
@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
             BFS.PathChart.Clear();
             panelToggle.isMoving = true; 
             panelToggle.OpenPanel();
+            locationDisplay.SelectCity(targetNode.GetComponentInChildren<CityManager>()); 
         }
 
     }

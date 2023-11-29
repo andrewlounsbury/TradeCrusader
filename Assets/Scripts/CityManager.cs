@@ -12,7 +12,7 @@ public class CityManager : MonoBehaviour
     //private variables
     [SerializeField] private Dictionary<Resource, int> resourceList = new();
     [SerializeField] public List<Resource> resources = new List<Resource>();
-    [SerializeField] private List<int> resourceAmount = new List<int>();
+    [SerializeField] public List<int> resourceAmount = new List<int>();
 
     [SerializeField] private Player player;
     public Node cityNode;

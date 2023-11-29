@@ -26,6 +26,15 @@ public class LocationDisplay : MonoBehaviour
         UpdateDisplayData();
     }
 
+    public void ArriveAtCity(CityManager city)
+    {
+/*        currentCity = city;
+        inventroy.cityManager = currentCity;
+        {
+            UpdateDisplayData();
+        }*/
+    }
+
     private void UpdateDisplayData()
     {
         locationName.text = currentCity.CityName;

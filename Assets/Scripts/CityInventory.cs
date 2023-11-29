@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CityInventory : MonoBehaviour
 {
-    
+    [SerializeField] private Color baseSlotColor;
     public List <ResourceDisplay> inventorySlots;
     public CityManager cityManager;
 
@@ -20,13 +20,15 @@ public class CityInventory : MonoBehaviour
                 slot.sprite = cityManager.resources[i].icon;
                 slot.color = new Color(1, 1, 1, 1);
                 inventorySlots[i].resource = cityManager.resources[i];
+                inventorySlots[i].amountText.text = cityManager.resourceAmount[i].ToString();
             }
-            /*else
+            else
             {
                 slot.sprite = null;
-                slot.color = new Color(1, 1, 1, 0);
+                slot.color = baseSlotColor;
                 inventorySlots[i].resource = null;
-            }*/
+                inventorySlots[i].amountText.text = "";
+            }
         }
     }
 }
