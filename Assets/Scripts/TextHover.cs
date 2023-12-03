@@ -9,7 +9,8 @@ public class TextHover : MonoBehaviour
 {
     private TextMeshProUGUI textMeshProText;
     private Button button;
-    private Color textColor;
+    public Image panel;
+    private Color changedColor;
     private string originalText;
     private float originalFontSize; 
 
@@ -21,23 +22,24 @@ public class TextHover : MonoBehaviour
     {
         textMeshProText = GetComponent<TextMeshProUGUI>();
         button = GetComponent<Button>();
+        panel = GetComponent<Image>();
         originalText = textMeshProText.text;
         originalFontSize = textMeshProText.fontSize;
-        textColor = textMeshProText.color;
+        changedColor = panel.color;
     }
 
     private void OnMouseEnter()
     {
         textMeshProText.text = HoverText;
         textMeshProText.fontSize = HoverFontSize;
-        textMeshProText.color = hoverColor;
+        panel.color = hoverColor;
     }
 
     private void OnMouseExit()
     {
         textMeshProText.text = originalText;
         textMeshProText.fontSize = originalFontSize;
-        textMeshProText.color = textColor;
+        panel.color = changedColor;
     }
 
     private void OnMouseDown()

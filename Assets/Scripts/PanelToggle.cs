@@ -57,7 +57,7 @@ public class PanelToggle : MonoBehaviour
             if (isOnScreen)
             {
                 MovePanel(offScreenPosition);
-                gameObject.transform.localScale = new Vector3(45, -20, 0);
+                gameObject.transform.localScale = new Vector3(-45, 20, 0);
             }
             else
             {

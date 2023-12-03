@@ -10,14 +10,20 @@ public class CityManager : MonoBehaviour
     public string CityName;
     public int CityFavor = 0;
     //private variables
-    [SerializeField] private Dictionary<Resource, int> resourceList = new();
+    [SerializeField] public Dictionary<Resource, int> resourceList = new();
     [SerializeField] public List<Resource> resources = new List<Resource>();
     [SerializeField] public List<int> resourceAmount = new List<int>();
+    [SerializeField] private List<int> resourceReplenish = new List<int>();
+    
+    [SerializeField] public float demandRate;
 
+    [SerializeField] public CityDemands cityDemands; 
     [SerializeField] private Player player;
-    public Node cityNode;
-    //On start clone the scriptable objects data, so you can alter it without writing to disk
 
+    public Node cityNode;
+    private List<int> resourceCap = new List<int>();
+    //On start clone the scriptable objects data, so you can alter it without writing to disk
+    private float timer = 1; 
 
     private void Start()
     {
@@ -26,6 +32,31 @@ public class CityManager : MonoBehaviour
         {
             resourceList.Add(resources[i], resourceAmount[i]);
         }
+
+        resourceCap.AddRange(resourceAmount);
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+
+        if (timer < 0)
+        {
+            int index = 0; 
+            foreach (Resource resource in resources)
+            {
+                resourceList[resource] += resourceReplenish[index];
+
+                if (resourceList[resource] > resourceCap[index])
+                {
+                    resourceList[resource] = resourceCap[index];
+                }
+
+                index++;
+            }
+            timer = 1; 
+        }
+
     }
 
     public void BeginVoyage()
@@ -44,27 +75,26 @@ public class CityManager : MonoBehaviour
         }
     }
 
-    public void Buy(Resource resource)
-    {
-        //make variable for resource stack amount instaead of flat 10 
-        Buy(resource, 10 );
-    }
 
     public void Sell(Resource resource, int amount)
     {
-        if (resourceList.ContainsKey(resource) && player.GetPlayerCargo().RemoveResource(resource, amount))
+        if (player.GetPlayerCargo().RemoveResource(resource, amount))
         {
+            foreach(Resource demand in cityDemands.resources)
+            {
+                if (resource == demand)
+                {
+                    
+                    player.GetPlayerPurse().AddGold(amount * resource.sellRate * demandRate);
+                    return; 
+                }
+            }
+
             player.GetPlayerPurse().AddGold(amount * resource.sellRate);
-            resourceList[resource] += amount; 
         }
     }
 
-    public void Sell(Resource resource)
-    {
-        Sell(resource, 10);
-    }
-
-    private int ResourceAmount(Resource resource)
+    public int ResourceAmount(Resource resource)
     {
         if (resourceList.ContainsKey(resource))
         {

@@ -19,6 +19,7 @@ public class CityInventory : MonoBehaviour
             {
                 slot.sprite = cityManager.resources[i].icon;
                 slot.color = new Color(1, 1, 1, 1);
+                inventorySlots[i].cityManager = cityManager;
                 inventorySlots[i].resource = cityManager.resources[i];
                 inventorySlots[i].amountText.text = cityManager.resourceAmount[i].ToString();
             }

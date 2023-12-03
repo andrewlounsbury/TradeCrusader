@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     public GameObject playerPanel;
     public PanelToggle panelToggle;
 
+    public Resource currentResource; 
+    private int exchangeAmount = 1;
+
     private void Start()
     {
         transform.position = currentNode.transform.position;
@@ -96,6 +99,35 @@ public class Player : MonoBehaviour
     {
         return currentNode;
     }
+
+    public void Sell()
+    {
+        CityManager city = targetNode.GetComponentInChildren<CityManager>();
+        city.Sell(currentResource, exchangeAmount); 
+    }
+
+    public void Buy()
+    {
+        if (cargo.CanAddResource(currentResource, exchangeAmount))
+        {
+            CityManager city = targetNode.GetComponentInChildren<CityManager>();
+            city.Buy(currentResource, exchangeAmount);
+        }
+
+    }
+
+    public int ResourceAmount(Resource resource)
+    {
+        if (cargo.resourceList.ContainsKey(resource))
+        {
+            return cargo.resourceList[resource];
+        }
+
+        return -1;
+    }
+
+
+
     //handle clicking of node in its own function here
     //whwenever node is clickeed, do BFS.BFS
 
