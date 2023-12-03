@@ -9,41 +9,43 @@ public class TextHover : MonoBehaviour
 {
     private TextMeshProUGUI textMeshProText;
     private Button button;
-    public Image panel;
-    private Color changedColor;
     private string originalText;
-    private float originalFontSize; 
+    private float originalFontSize;
 
+    public GameObject gameObject;
+    public Image panel;
     public string HoverText = "hovertext";
     public float HoverFontSize = 100f;
-    public Color hoverColor = Color.white;
+    public Color originalColor = Color.white;
+    public Color changedColor = Color.white;
 
     void Start()
     {
         textMeshProText = GetComponent<TextMeshProUGUI>();
         button = GetComponent<Button>();
-        panel = GetComponent<Image>();
+        panel = gameObject.GetComponent<Image>();
+        panel.color = originalColor;
         originalText = textMeshProText.text;
         originalFontSize = textMeshProText.fontSize;
-        changedColor = panel.color;
     }
 
     private void OnMouseEnter()
     {
         textMeshProText.text = HoverText;
         textMeshProText.fontSize = HoverFontSize;
-        panel.color = hoverColor;
+        panel.color = changedColor;
     }
 
     private void OnMouseExit()
     {
         textMeshProText.text = originalText;
         textMeshProText.fontSize = originalFontSize;
-        panel.color = changedColor;
+        panel.color = originalColor;
     }
 
     private void OnMouseDown()
     {
         button.onClick.Invoke();
     }
+
 }

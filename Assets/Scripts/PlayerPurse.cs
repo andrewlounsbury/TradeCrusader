@@ -12,7 +12,7 @@ public class PlayerPurse : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        purseText.text = "Purse: " + currentGold;
+        purseText.text = currentGold + " G";
     }
 
     // Update is called once per frame
