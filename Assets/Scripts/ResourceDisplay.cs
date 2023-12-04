@@ -61,7 +61,7 @@ public class ResourceDisplay : MonoBehaviour
 
         wpuText.text = resource.weightPerUnit.ToString() + " /unit"; 
 
-        rateText.text = resource.buyRate.ToString() + " G / unit";
+        rateText.text = resource.buyRate.ToString() + " G /unit";
 
         player.currentResource = resource;
     }
@@ -72,5 +72,12 @@ public class ResourceDisplay : MonoBehaviour
         {
             wpuText.text = "Total: " + player.GetPlayerCargo().GetTotalWeight().ToString() + "/" + player.GetPlayerCargo().maxWeight;
         }
+    }
+
+    public void ResetTexts()
+    {
+        wpuText.text = "weight";
+        nameText.text = "rate";
+        rateText.text = "";
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +31,15 @@ public class CityInventory : MonoBehaviour
                 inventorySlots[i].resource = null;
                 inventorySlots[i].amountText.text = "";
             }
+        }
+    }
+
+    public void ResetTexts()
+    {
+        foreach (var slot in inventorySlots)
+        {
+            slot.amountText.text = "";
+            slot.ResetTexts();
         }
     }
 }

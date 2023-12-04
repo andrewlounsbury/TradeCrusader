@@ -14,15 +14,15 @@ public class LocationDisplay : MonoBehaviour
     public TMP_Text locationName;
     public Slider favor;
     public Image flag; 
-    public CityInventory inventroy;
+    public CityInventory inventory;
 
     public Player player;
 
     public void SelectCity(CityManager city)
     {
         currentCity = city;
-        inventroy.cityManager = currentCity;
-
+        inventory.cityManager = currentCity;
+        ResetText();
         UpdateDisplayData();
     }
 
@@ -40,11 +40,16 @@ public class LocationDisplay : MonoBehaviour
         locationName.text = currentCity.CityName;
         //favor.Image = currentCity.CityFavor.ToString();
 
-        inventroy.SetResourceDsiplay();
+        inventory.SetResourceDsiplay();
     }
 
     public void BeginVoyage()
     {
         player.SetTargetNode(currentCity.cityNode);
+    }
+
+    public void ResetText()
+    {
+        inventory.ResetTexts();
     }
 }
