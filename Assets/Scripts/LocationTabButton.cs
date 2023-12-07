@@ -9,9 +9,11 @@ public class LocationTabButton : MonoBehaviour
     [SerializeField] private GameObject atLocationPanel;
     [SerializeField] private Player player;
     [SerializeField] private LocationDisplay locationDisplay;
-    public float hoverScale = 1.2f;
+    [SerializeField] private GameObject buttonToShow;
+    [SerializeField] private GameObject buttonToHide;
+    /*public float hoverScale = 1.2f;
     private Vector3 originalScale;
-    private Color selectedColor;
+    private Color selectedColor;*/
 
     // Start is called before the first frame update
     private void Start()
@@ -19,15 +21,16 @@ public class LocationTabButton : MonoBehaviour
         playerPanel.SetActive(false);
         locationPanel.SetActive(false);
         atLocationPanel.SetActive(false);
-        originalScale = transform.localScale;
+        buttonToShow.SetActive(false); 
+        //originalScale = transform.localScale;
     }
 
     void OnMouseEnter()
     {
-        transform.localScale = originalScale * hoverScale;
+        //transform.localScale = originalScale * hoverScale;
     }
 
-    private void OnMouseDown()
+    public void Selected()
     {
         UpdatePanels();
     }
@@ -39,18 +42,20 @@ public class LocationTabButton : MonoBehaviour
             playerPanel.SetActive(false);
             locationPanel.SetActive(false);
             atLocationPanel.SetActive(true);
+            buttonToShow.SetActive(true);
         }
         else
         {
             playerPanel.SetActive(false);
             locationPanel.SetActive(true);
             atLocationPanel.SetActive(false);
+            buttonToShow.SetActive(true);
         }
-        transform.localScale = originalScale;
+       // transform.localScale = originalScale;
     }
 
     void OnMouseExit()
     {
-        transform.localScale = originalScale;
+       // transform.localScale = originalScale;
     }
 }

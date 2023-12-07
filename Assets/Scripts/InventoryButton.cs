@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTabButton : MonoBehaviour
+public class InventoryButton : MonoBehaviour
 {
     [SerializeField] private GameObject panelToOpen;
     [SerializeField] private GameObject panelToClose1;
     [SerializeField] private GameObject panelToClose2;
-    public float hoverScale = 1.2f;
+    [SerializeField] private GameObject buttonToHide;
+    [SerializeField] private GameObject buttonToShow;
+    //public float hoverScale = 1.2f;
     private Vector3 originalScale;
     private Color selectedColor;
 
@@ -17,23 +19,27 @@ public class PlayerTabButton : MonoBehaviour
         panelToOpen.SetActive(false);
         panelToClose1.SetActive(false); 
         panelToClose2.SetActive(false);
-        originalScale = transform.localScale;
+        buttonToHide.SetActive(true);
+        buttonToShow.SetActive(false);
+        //originalScale = transform.localScale;
     }
 
     void OnMouseEnter()
     {
-        transform.localScale = originalScale * hoverScale;
+        //transform.localScale = originalScale * hoverScale;
     }
 
-    private void OnMouseDown()
+    public void Select()
     {
         panelToOpen.SetActive(true);
         panelToClose1.SetActive(false);
         panelToClose2.SetActive(false);
-        transform.localScale = originalScale;
+        buttonToHide.SetActive(false);
+        buttonToShow.SetActive(true);
     }
+
     void OnMouseExit()
     {
-        transform.localScale = originalScale;
+        //transform.localScale = originalScale;
     }
 }
