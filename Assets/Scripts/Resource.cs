@@ -11,6 +11,7 @@ public class Resource : ScriptableObject
     public float weightPerUnit;
     public float buyRate;
     public float sellRate;
-    public int amount; 
+    public int amount;
+    public string category;
     public Sprite icon;
 }

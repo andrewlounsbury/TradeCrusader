@@ -42,11 +42,13 @@ public class ResourceDisplay : MonoBehaviour
             if (cityManager)
             {
                 amountText.text = cityManager.ResourceAmount(resource).ToString();
+                nameText.text = resource.name;
 
             }
             else
             {
                 amountText.text = player.ResourceAmount(resource).ToString();
+                nameText.text = resource.name;
             }
         }
     }
@@ -57,11 +59,11 @@ public class ResourceDisplay : MonoBehaviour
 
         if (resource == null) return;
 
-        nameText.text = resource.name + " Rate:";
+        nameText.text = resource.name;
 
         wpuText.text = resource.weightPerUnit.ToString() + " /unit"; 
 
-        rateText.text = resource.buyRate.ToString() + " G /unit";
+        rateText.text = resource.buyRate.ToString() + " G";
 
         player.currentResource = resource;
     }
@@ -77,7 +79,7 @@ public class ResourceDisplay : MonoBehaviour
     public void ResetTexts()
     {
         wpuText.text = "weight";
-        nameText.text = "rate";
+        nameText.text = "name";
         rateText.text = "";
     }
 }

@@ -16,4 +16,6 @@ MonoBehaviour:
   weightPerUnit: 1
   buyRate: 10
   sellRate: 7
+  amount: 0
+  category: Material
   icon: {fileID: 21300000, guid: faed1c8fa19bee44a955fc475b47a017, type: 3}
