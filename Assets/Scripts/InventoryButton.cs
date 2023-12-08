@@ -19,8 +19,6 @@ public class InventoryButton : MonoBehaviour
         panelToOpen.SetActive(false);
         panelToClose1.SetActive(false); 
         panelToClose2.SetActive(false);
-        buttonToHide.SetActive(true);
-        buttonToShow.SetActive(false);
         //originalScale = transform.localScale;
     }
 

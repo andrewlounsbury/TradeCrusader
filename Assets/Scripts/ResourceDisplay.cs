@@ -20,6 +20,8 @@ public class ResourceDisplay : MonoBehaviour
     public TMP_Text amountText;
     public TMP_Text wpuText;
 
+    [SerializeField] private GameObject button;
+
     // Start is called before the first frame update
     /*  void Start()
       {
@@ -56,6 +58,7 @@ public class ResourceDisplay : MonoBehaviour
 
     private void OnMouseOver()
     {
+        button.SetActive(true);
 
         if (resource == null) return;
 

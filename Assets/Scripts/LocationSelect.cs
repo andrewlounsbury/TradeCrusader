@@ -17,7 +17,7 @@ public class LocationSelect : MonoBehaviour
     [HideInInspector] public Sprite originalSprite;
     [HideInInspector] public SpriteRenderer spriteRenderer;
 
-    [SerializeField] private LocationTabButton locationTabButton; 
+    [SerializeField] private LocationButton locationTabButton; 
     [SerializeField] private PanelToggle toggle;
     [SerializeField] private LocationDisplay locationDisplay;
 

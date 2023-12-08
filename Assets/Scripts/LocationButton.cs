@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LocationTabButton : MonoBehaviour
+public class LocationButton : MonoBehaviour
 {
     [SerializeField] private GameObject playerPanel;
     [SerializeField] private GameObject locationPanel;
@@ -21,7 +21,6 @@ public class LocationTabButton : MonoBehaviour
         playerPanel.SetActive(false);
         locationPanel.SetActive(false);
         atLocationPanel.SetActive(false);
-        buttonToShow.SetActive(false); 
         //originalScale = transform.localScale;
     }
 

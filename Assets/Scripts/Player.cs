@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,7 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Node targetNode;
     [SerializeField] private LocationDisplay locationDisplay;
     [SerializeField] private BreadthFirstSearch BFS;
-
+    [SerializeField] private TMP_Text sellAmountText;
+    [SerializeField] private TMP_Text buyAmountText;
     private bool isMoving = false;
 
     [SerializeField] private PlayerPurse playerPurse;
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
 
     public Resource currentResource; 
     private int exchangeAmount = 1;
+    private bool isBuying = true; 
 
     private void Start()
     {
@@ -100,6 +103,44 @@ public class Player : MonoBehaviour
         return currentNode;
     }
 
+    public void IncreaseExchangeAmount(int amount)
+    {
+        if (!currentResource) return;
+
+
+        exchangeAmount += amount;
+        int v;
+        if (isBuying)
+        {
+            v = targetNode.GetComponentInChildren<CityManager>().ResourceAmount(currentResource);
+        }
+        else
+        {
+            v = ResourceAmount(currentResource);
+        }
+
+        if (exchangeAmount > v)
+        {
+            exchangeAmount = v;
+        }
+        sellAmountText.text = exchangeAmount.ToString();
+        buyAmountText.text = exchangeAmount.ToString();
+    }
+
+    public void DecreaseExchangeAmount(int amount)
+    {
+        if (!currentResource) return;
+
+        exchangeAmount -= amount;
+
+        if (exchangeAmount < 0)
+        {
+            exchangeAmount = 0;
+        }
+        buyAmountText.text = exchangeAmount.ToString();
+        sellAmountText.text = exchangeAmount.ToString();
+    }
+
     public void Sell()
     {
         CityManager city = targetNode.GetComponentInChildren<CityManager>();
@@ -126,8 +167,9 @@ public class Player : MonoBehaviour
         return -1;
     }
 
-
-
+    public void PlayerIsBuying() => isBuying = true;
+    public void PlayerIsSelling() => isBuying = false;
+    public void ResetExchangeAmount() => exchangeAmount = 0;
     //handle clicking of node in its own function here
     //whwenever node is clickeed, do BFS.BFS
 
