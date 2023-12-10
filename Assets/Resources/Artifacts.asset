@@ -17,5 +17,5 @@ MonoBehaviour:
   buyRate: 0
   sellRate: 0
   amount: 0
-  category: Unique
+  category: 00000000
   icon: {fileID: 0}

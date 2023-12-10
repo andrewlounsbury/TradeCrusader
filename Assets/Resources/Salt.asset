@@ -17,5 +17,5 @@ MonoBehaviour:
   buyRate: 0
   sellRate: 0
   amount: 0
-  category: Food, Material
+  category: 0000000003000000
   icon: {fileID: 0}

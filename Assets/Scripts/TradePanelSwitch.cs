@@ -37,15 +37,12 @@ public class TradePanelSwitch : MonoBehaviour
         buttonToHide2.SetActive(false);
     }
 
-    public void Cancel()
+/*    public void Cancel()
     {
-        panelToOpen.SetActive(true);
+        panelToOpen.SetActive(false);
         panelToClose.SetActive(false);
-        buttonToShow.SetActive(true);
-        buttonToHide.SetActive(true);
-        buttonToHide2.SetActive(true);
-    }
-
-
-
+        buttonToShow.SetActive(false);
+        buttonToHide.SetActive(false);
+        buttonToHide2.SetActive(false);
+    }*/
 }

@@ -24,13 +24,13 @@ public class PlayerPurse : MonoBehaviour
     public void AddGold(float amount)
     {
         currentGold += amount;
-        purseText.text = "Purse: " + currentGold;
+        purseText.text = currentGold.ToString() + " G";
     }
 
     public void RemoveGold(float amount)
     {
         currentGold -= amount;
-        purseText.text = "Purse: " + currentGold;
+        purseText.text = currentGold.ToString() + " G";
     }
 
     public bool CanRemoveGold(float amount)

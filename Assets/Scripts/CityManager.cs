@@ -23,7 +23,7 @@ public class CityManager : MonoBehaviour
     public Node cityNode;
     private List<int> resourceCap = new List<int>();
     //On start clone the scriptable objects data, so you can alter it without writing to disk
-    private float timer = 1; 
+    private float timer = 24; 
 
     private void Start()
     {
@@ -54,7 +54,7 @@ public class CityManager : MonoBehaviour
 
                 index++;
             }
-            timer = 1; 
+            timer = 24; 
         }
 
     }
@@ -78,13 +78,18 @@ public class CityManager : MonoBehaviour
 
     public void Sell(Resource resource, int amount)
     {
+        if(cityDemands.MetCurrentDemand(resource, amount))
+        {
+            amount = cityDemands.currentDemandCount[cityDemands.currentDemands.IndexOf(resource)];
+        }
+
         if (player.GetPlayerCargo().RemoveResource(resource, amount))
         {
             foreach(Resource demand in cityDemands.resources)
             {
                 if (resource == demand)
                 {
-                    
+                    cityDemands.AddDemandResource(resource, amount);
                     player.GetPlayerPurse().AddGold(amount * resource.sellRate * demandRate);
                     return; 
                 }

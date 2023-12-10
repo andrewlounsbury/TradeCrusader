@@ -7,7 +7,7 @@ public class PlayerCargo : MonoBehaviour
     [SerializeField] public Dictionary<Resource, int> resourceList = new();
     [SerializeField] public List<Resource> resources = new List<Resource>();
     [SerializeField] private List<int> resourceAmount = new List<int>();
-    public float maxWeight = 100;
+    public float maxWeight = 200;
 
     // Start is called before the first frame update
     private void Start()
@@ -21,7 +21,8 @@ public class PlayerCargo : MonoBehaviour
 
     public bool CanAddResource(Resource resource, int amount)
     {
-        return GetTotalWeight() + resource.weightPerUnit * amount <= maxWeight;
+        float totalWeight = GetTotalWeight() + resource.weightPerUnit * amount;
+        return totalWeight <= maxWeight;
     }
 
     public bool RemoveResource(Resource resource, int amount)

@@ -17,10 +17,13 @@ public class ResourceDisplay : MonoBehaviour
           
     public TMP_Text buyText;
     public TMP_Text sellText;
-    public TMP_Text amountText;
+    public TMP_Text amountText; 
+    public TMP_Text amountTextPanel;
     public TMP_Text wpuText;
 
-    [SerializeField] private GameObject button;
+    [SerializeField] private GameObject inactiveButton;
+    [SerializeField] private GameObject activeButton;
+    public bool isDemand = false;
 
     // Start is called before the first frame update
     /*  void Start()
@@ -43,8 +46,18 @@ public class ResourceDisplay : MonoBehaviour
         {
             if (cityManager)
             {
-                amountText.text = cityManager.ResourceAmount(resource).ToString();
-                nameText.text = resource.name;
+                if(isDemand)
+                {
+                    amountText.text = cityManager.cityDemands.currentDemandCount[cityManager.cityDemands.currentDemands.IndexOf(resource)].ToString();
+                    amountTextPanel.text = cityManager.cityDemands.currentDemandCount[cityManager.cityDemands.currentDemands.IndexOf(resource)].ToString();
+                }
+                else
+                {
+                    amountText.text = cityManager.ResourceAmount(resource).ToString();
+                    amountTextPanel.text = cityManager.ResourceAmount(resource).ToString();
+                }
+
+    nameText.text = resource.name;
 
             }
             else
@@ -58,9 +71,14 @@ public class ResourceDisplay : MonoBehaviour
 
     private void OnMouseOver()
     {
-        button.SetActive(true);
-
         if (resource == null) return;
+
+        if (activeButton && inactiveButton)
+        {
+            activeButton.SetActive(true);
+            inactiveButton.SetActive(false);
+        }
+        
 
         nameText.text = resource.name;
 

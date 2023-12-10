@@ -15,6 +15,7 @@ public class LocationDisplay : MonoBehaviour
     public Slider favor;
     public Image flag; 
     public CityInventory inventory;
+    public CityInventory demandsInventory;
 
     public Player player;
 
@@ -22,6 +23,7 @@ public class LocationDisplay : MonoBehaviour
     {
         currentCity = city;
         inventory.cityManager = currentCity;
+        demandsInventory.cityManager = currentCity;
         ResetText();
         UpdateDisplayData();
     }
@@ -41,6 +43,11 @@ public class LocationDisplay : MonoBehaviour
         //favor.Image = currentCity.CityFavor.ToString();
 
         inventory.SetResourceDsiplay();
+
+        if (demandsInventory)
+        {
+            demandsInventory.SetDemandsDisplay();
+        }
     }
 
     public void BeginVoyage()

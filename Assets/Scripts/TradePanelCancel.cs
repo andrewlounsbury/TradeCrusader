@@ -5,10 +5,10 @@ using UnityEngine;
 public class TradePanelCancel : MonoBehaviour
 {
     
-    [SerializeField] private GameObject panelToClose;
-    [SerializeField] private GameObject panelToClose2;
-    [SerializeField] private GameObject buttonToShow;
-    [SerializeField] private GameObject buttonToHide;
+    [SerializeField] private GameObject panel1;
+    [SerializeField] private GameObject panel2;
+    [SerializeField] private GameObject button1;
+    [SerializeField] private GameObject button2;
 
     private void Start()
     {
@@ -21,10 +21,20 @@ public class TradePanelCancel : MonoBehaviour
 
     public void Cancel()
     {
-        panelToClose2.SetActive(true);
-        panelToClose.SetActive(false);
-        buttonToShow.SetActive(true);
-        buttonToHide.SetActive(true);
-    }
+        if (panel1.activeInHierarchy) 
+        {
+            button1.SetActive(true);
+            button2.SetActive(false);
+        }
+        else if(panel2.activeInHierarchy)
+        {
+            button1.SetActive(false);
+            button2.SetActive(true);
+        }
 
+        panel1.SetActive(false);
+        panel2.SetActive(false);
+
+        gameObject.SetActive(false);
+    }
 }

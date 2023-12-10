@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public PanelToggle panelToggle;
 
     public Resource currentResource; 
-    private int exchangeAmount = 1;
+    private int exchangeAmount = 0;
     private bool isBuying = true; 
 
     private void Start()
@@ -139,6 +139,14 @@ public class Player : MonoBehaviour
         }
         buyAmountText.text = exchangeAmount.ToString();
         sellAmountText.text = exchangeAmount.ToString();
+    }
+
+    public void RemoveResource(Resource resource, int amount)
+    {
+        if(GetPlayerCargo() != null) 
+        {
+            cargo.RemoveResource(resource, amount);
+        }
     }
 
     public void Sell()
