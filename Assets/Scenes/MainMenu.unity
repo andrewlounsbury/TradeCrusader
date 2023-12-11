@@ -1524,7 +1524,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Gameplay Design: \nAndrew Lounsbury\n\nSpecial Thanks:\nXavier Olmstead,
-    James McKibbin, \nMichael Menard, Kevin Neilbert "
+    James McKibbin, \nMichael Menard, Kevin Neibert "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ee6b533f7c39f6e449943dea89961d46, type: 2}
   m_sharedMaterial: {fileID: 5075828214172730405, guid: ee6b533f7c39f6e449943dea89961d46, type: 2}
