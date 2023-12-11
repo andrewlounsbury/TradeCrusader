@@ -23,7 +23,7 @@ public class CityDemands : MonoBehaviour
 
     public bool MetCurrentDemand(Resource resource, int amount)
     {
-        return IsDemandingResource(resource) && currentDemandCount[currentDemands.IndexOf(resource)] >= amount;
+        return IsDemandingResource(resource) && currentDemandCount[currentDemands.IndexOf(resource)] <= amount;
     }
 
     private bool IsDemandingResource(Resource resource) => currentDemands.IndexOf(resource) >= 0;

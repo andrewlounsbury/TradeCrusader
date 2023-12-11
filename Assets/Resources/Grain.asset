@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Grain
   m_EditorClassIdentifier: 
   name: Grain
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 2
+  buyRate: 13
+  sellRate: 20
   amount: 0
   category: 03000000
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a684d6238e81037428ae3a35ca187a22, type: 3}

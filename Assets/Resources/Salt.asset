@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Salt
   m_EditorClassIdentifier: 
   name: Salt
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 1
+  buyRate: 47
+  sellRate: 56
   amount: 0
   category: 0000000003000000
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 76372b9bf30a0844eb516a15d9bc43c0, type: 3}

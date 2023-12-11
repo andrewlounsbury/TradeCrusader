@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Meat
   m_EditorClassIdentifier: 
   name: Meat
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 13
+  buyRate: 38
+  sellRate: 52
   amount: 0
   category: 03000000
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 62540771d19f3db41b1aa86296c909a9, type: 3}

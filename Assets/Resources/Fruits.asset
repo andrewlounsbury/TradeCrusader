@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Fruits
   m_EditorClassIdentifier: 
   name: Fruits
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 5
+  buyRate: 69
+  sellRate: 72
   amount: 0
-  category: 03000000
-  icon: {fileID: 0}
+  category: 0200000003000000
+  icon: {fileID: 21300000, guid: a402bc49715b6e8438d91723bc302240, type: 3}

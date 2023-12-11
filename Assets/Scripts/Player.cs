@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 3;
 
+    public TMP_Text buyText;
+    public TMP_Text sellText;
     public GameObject atLocationPanel;
     public GameObject notAtLocationPanel;
     public GameObject playerPanel;
@@ -37,7 +39,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-       MoveToTarget();
+        MoveToTarget();
+
+        buyText.text = "Buy " + currentResource.name;
+        sellText.text = "Sell " + currentResource.name;
     }
 
     public PlayerPurse GetPlayerPurse() => playerPurse;
@@ -172,7 +177,15 @@ public class Player : MonoBehaviour
             return cargo.resourceList[resource];
         }
 
-        return -1;
+        for (int i = 0; i < cargo.resources.Count; i++)
+        {
+            if (cargo.resources[i] == resource)
+            {
+                return cargo.resourceAmount[i];
+            }
+        }
+
+        return 0;
     }
 
     public void PlayerIsBuying() => isBuying = true;
@@ -181,4 +194,8 @@ public class Player : MonoBehaviour
     //handle clicking of node in its own function here
     //whwenever node is clickeed, do BFS.BFS
 
+    public void SetSpeed(float speed)
+    {
+        moveSpeed = speed; 
+    }
 }

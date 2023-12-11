@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   name: Stone
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 20
+  buyRate: 47
+  sellRate: 55
   amount: 0
   category: 00000000
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0ffcb2844675c6a49afcf3f7c69dd745, type: 3}

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Artifacts
   m_EditorClassIdentifier: 
   name: Artifacts
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 15
+  buyRate: 250
+  sellRate: 275
   amount: 0
-  category: 00000000
-  icon: {fileID: 0}
+  category: 01000000
+  icon: {fileID: 21300000, guid: 1778083cdfebfe149bf0ab1b9b1d5d29, type: 3}

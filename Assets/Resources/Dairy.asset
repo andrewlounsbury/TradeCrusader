@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Dairy
   m_EditorClassIdentifier: 
   name: Dairy
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 3
+  buyRate: 20
+  sellRate: 23
   amount: 0
   category: 03000000
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c6e4ae0d838015e4bac61b39a21357de, type: 3}

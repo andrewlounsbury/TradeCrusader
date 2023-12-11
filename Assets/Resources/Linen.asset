@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Linen
   m_EditorClassIdentifier: 
   name: Linen
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 2
+  buyRate: 35
+  sellRate: 41
   amount: 0
   category: 00000000
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c2c7babf9e0d3cb49acc9d16ab9b6ac3, type: 3}

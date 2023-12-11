@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Silk
   m_EditorClassIdentifier: 
   name: Silk
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 1
+  buyRate: 137
+  sellRate: 168
   amount: 0
-  category: Unique
-  icon: {fileID: 0}
+  category: 01000000
+  icon: {fileID: 21300000, guid: 04cdedfb72e688c429fd75451e71e67c, type: 3}

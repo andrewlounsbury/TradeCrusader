@@ -40,9 +40,9 @@ public class CityInventory : MonoBehaviour
         {
             Image slot = inventorySlots[i].GetComponent<Image>();
 
-            if (cityManager.resources.Count > i)
+            if (cityManager.cityDemands.currentDemands.Count > i)
             {
-                slot.sprite = cityManager.resources[i].icon;
+                slot.sprite = cityManager.cityDemands.currentDemands[i].icon;
                 slot.color = new Color(1, 1, 1, 1);
                 inventorySlots[i].cityManager = cityManager;
                 inventorySlots[i].resource = cityManager.cityDemands.currentDemands[i];

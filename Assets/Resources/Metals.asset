@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Metals
   m_EditorClassIdentifier: 
   name: Metals
-  weightPerUnit: 0
+  weightPerUnit: 18
   buyRate: 0
   sellRate: 0
   amount: 0
   category: 00000000
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9097ada4e0749964386bf1fa2687be72, type: 3}

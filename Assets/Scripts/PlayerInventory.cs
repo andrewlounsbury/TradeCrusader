@@ -10,10 +10,10 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        SetResourceDsiplay();
+        SetResourceDisplay();
     }
 
-    public void SetResourceDsiplay()
+    public void SetResourceDisplay()
     {
         for (int i = 0; i < inventorySlots.Count; i++)
         {

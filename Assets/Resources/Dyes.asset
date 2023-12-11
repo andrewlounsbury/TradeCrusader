@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Dyes
   m_EditorClassIdentifier: 
   name: Dyes
-  weightPerUnit: 0
-  buyRate: 0
-  sellRate: 0
+  weightPerUnit: 3
+  buyRate: 120
+  sellRate: 180
   amount: 0
-  category: Unique
-  icon: {fileID: 0}
+  category: 01000000
+  icon: {fileID: 21300000, guid: 94421a07442f86a4e87c1037f6c9adce, type: 3}

@@ -17,5 +17,5 @@ MonoBehaviour:
   buyRate: 0
   sellRate: 0
   amount: 0
-  category: 03000000
-  icon: {fileID: 0}
+  category: 0300000002000000
+  icon: {fileID: 21300000, guid: e17022a8a3e5b5846acae8b652dbe3a1, type: 3}
