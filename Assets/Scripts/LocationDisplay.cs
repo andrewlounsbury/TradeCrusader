@@ -5,7 +5,6 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UI;
 
 public class LocationDisplay : MonoBehaviour
 {
@@ -37,9 +36,10 @@ public class LocationDisplay : MonoBehaviour
         }*/
     }
 
-    private void UpdateDisplayData()
+    public void UpdateDisplayData()
     {
-        locationName.text = currentCity.CityName;
+        if (currentCity)
+            locationName.text = currentCity.CityName;
         //favor.Image = currentCity.CityFavor.ToString();
 
         inventory.SetResourceDsiplay();

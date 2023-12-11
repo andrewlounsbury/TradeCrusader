@@ -97,6 +97,11 @@ public class CityManager : MonoBehaviour
 
             player.GetPlayerPurse().AddGold(amount * resource.sellRate);
         }
+
+        if(cityDemands.MetCurrentDemand(resource, amount))
+        {
+            amount = cityDemands.currentDemandCount[cityDemands.currentDemands.IndexOf(resource)];
+        }
     }
 
     public int ResourceAmount(Resource resource)

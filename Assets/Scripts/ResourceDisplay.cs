@@ -22,6 +22,7 @@ public class ResourceDisplay : MonoBehaviour
 
     [SerializeField] private GameObject inactiveButton;
     [SerializeField] private GameObject activeButton;
+    [SerializeField] private Resource noneResource;
     public bool isDemand = false;
     [SerializeField] private bool isPlayerResource; 
 
@@ -46,7 +47,7 @@ public class ResourceDisplay : MonoBehaviour
         {
             if (cityManager && !isPlayerResource)
             {
-                if (isDemand)
+                if (isDemand) // SELLING INVENTORY 
                 {
                     int index = cityManager.cityDemands.currentDemands.IndexOf(resource);
 
@@ -54,21 +55,28 @@ public class ResourceDisplay : MonoBehaviour
 
                     amountText.text = cityManager.cityDemands.currentDemandCount[index].ToString();
                     amountTextBuyPanel.text = cityManager.cityDemands.currentDemandCount[index].ToString();
-                    //amountTextSellPanel.text = player.ResourceAmount(resource).ToString();
                     amountTextSellPanel.text = cityManager.cityDemands.currentDemandCount[index].ToString();
                 }
-                else
+                else // BUYING INVENTORY 
                 {
                     amountText.text = cityManager.ResourceAmount(resource).ToString();
-                    amountTextBuyPanel.text = cityManager.ResourceAmount(resource).ToString();
+                    amountTextBuyPanel.text = cityManager.ResourceAmount(player.currentResource).ToString();
                     amountTextSellPanel.text = player.ResourceAmount(player.currentResource).ToString();
                 }
             }
-            else
+            else // PLAYER INVENTORY 
             {
                 amountText.text = player.ResourceAmount(resource).ToString();
+
+                if (player.ResourceAmount(resource) == 0)
+                {
+                    resource = noneResource;
+                    GetComponent<Image>().sprite = null;
+                }
             }
             nameText.text = resource.name;
+
+
         }
     }
     //hi this is carson

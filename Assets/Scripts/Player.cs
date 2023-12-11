@@ -43,6 +43,10 @@ public class Player : MonoBehaviour
 
         buyText.text = "Buy " + currentResource.name;
         sellText.text = "Sell " + currentResource.name;
+
+        locationDisplay.UpdateDisplayData();
+
+        Quit();
     }
 
     public PlayerPurse GetPlayerPurse() => playerPurse;
@@ -96,6 +100,15 @@ public class Player : MonoBehaviour
             locationDisplay.SelectCity(targetNode.GetComponentInChildren<CityManager>()); 
         }
 
+    }
+
+    public void Quit()
+    {
+       if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("Quit Successfully");
+        }
     }
 
     internal Node GetTargetNode()

@@ -835,7 +835,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 3, y: -4}
-  m_SizeDelta: {x: 22.68, y: 30.01}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &38756140
 MonoBehaviour:
@@ -1132,7 +1132,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9d3eddbe575c4f045a63654ac37f828d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1162,9 +1162,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 30ccb9863417a6a4ab3e21d01faae3aa, type: 2}
   - {fileID: 11400000, guid: ddb3363b6ca7c3a4f8554c573e1a1615, type: 2}
   - {fileID: 11400000, guid: e6bd5d809e95feb45a39c3a118a63757, type: 2}
-  resourceAmount: 900100009001000090010000
-  resourceReplenish: 020000000200000002000000
-  demandRate: 1.3
+  resourceAmount: 230000005a00000037000000
+  resourceReplenish: 040000000c00000006000000
+  demandRate: 1.2
   cityDemands: {fileID: 67257375}
   player: {fileID: 1663645326}
   cityNode: {fileID: 114209858}
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -1268,10 +1268,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee3a22b78395f8b4b9caaa35596e801d, type: 2}
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 50, y: 87}
+  foodRange: {x: 30, y: 85}
+  luxuryRange: {x: 0, y: 0}
+  uniqueRange: {x: 0, y: 0}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -1917,7 +1917,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -16, y: -1}
-  m_SizeDelta: {x: 128.61, y: 24.01}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118715618
 MonoBehaviour:
@@ -3137,7 +3137,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &203140855 stripped
 MonoBehaviour:
@@ -3501,7 +3501,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &226215673 stripped
 GameObject:
@@ -3536,6 +3536,7 @@ MonoBehaviour:
   wpuText: {fileID: 530593368}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!61 &226215676
@@ -4161,11 +4162,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 53.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 18.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2633890512982535550, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4362,6 +4363,7 @@ MonoBehaviour:
   wpuText: {fileID: 38756141}
   inactiveButton: {fileID: 487913684}
   activeButton: {fileID: 339513096}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!61 &252912062
@@ -5010,11 +5012,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 53.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 18.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2633890512982535550, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5211,6 +5213,7 @@ MonoBehaviour:
   wpuText: {fileID: 38756141}
   inactiveButton: {fileID: 487913684}
   activeButton: {fileID: 339513096}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!61 &317760756
@@ -5403,6 +5406,18 @@ MonoBehaviour:
       - m_Target: {fileID: 339513101}
         m_TargetAssemblyTypeName: TradePanelSwitch, Assembly-CSharp
         m_MethodName: OpenBuy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1663645326}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: PlayerIsBuying
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6617,7 +6632,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &434613164
 GameObject:
@@ -6699,6 +6714,7 @@ MonoBehaviour:
   wpuText: {fileID: 369820586}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!61 &438497462
@@ -7026,6 +7042,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1663645326}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: PlayerIsSelling
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &487913687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7161,6 +7189,7 @@ MonoBehaviour:
   wpuText: {fileID: 369820586}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!61 &499528581
@@ -7831,7 +7860,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &530593365
 GameObject:
@@ -8447,7 +8476,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &554365797 stripped
 MonoBehaviour:
@@ -8600,10 +8629,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c05f75be194bc94e8e38c55b443c222, type: 2}
   - {fileID: 11400000, guid: e6bd5d809e95feb45a39c3a118a63757, type: 2}
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 50, y: 88}
+  foodRange: {x: 50, y: 75}
+  luxuryRange: {x: 0, y: 0}
+  uniqueRange: {x: 0, y: 0}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -8623,7 +8652,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -8661,9 +8690,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee3a22b78395f8b4b9caaa35596e801d, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
   - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
-  resourceAmount: 000000000000000000000000
-  resourceReplenish: 000000000000000000000000
-  demandRate: 0
+  resourceAmount: 640000005500000069000000
+  resourceReplenish: 0d000000090000000f000000
+  demandRate: 1.1
   cityDemands: {fileID: 583763942}
   player: {fileID: 1663645326}
   cityNode: {fileID: 1100388513}
@@ -8707,7 +8736,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7cfc8abb671627a4fbfd73be5e92450f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9258,10 +9287,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee3a22b78395f8b4b9caaa35596e801d, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
   - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 35, y: 45}
+  foodRange: {x: 45, y: 62}
+  luxuryRange: {x: 25, y: 53}
+  uniqueRange: {x: 0, y: 0}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -9281,7 +9310,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -9300,7 +9329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0895d2643e5ef9941bf15a6e49f72b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: 1.2
+  hoverScale: 1.5
 --- !u!114 &626784657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9319,9 +9348,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7aa19b9ad4ad2541a7c9b84db7a281a, type: 2}
   - {fileID: 11400000, guid: e6bd5d809e95feb45a39c3a118a63757, type: 2}
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
-  resourceAmount: d1040000cf040000cf040000
-  resourceReplenish: 000000000000000000000000
-  demandRate: 0
+  resourceAmount: 37000000280000003c000000
+  resourceReplenish: 060000000300000008000000
+  demandRate: 1.3
   cityDemands: {fileID: 626784654}
   player: {fileID: 1663645326}
   cityNode: {fileID: 2140518164}
@@ -9365,7 +9394,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7cfc8abb671627a4fbfd73be5e92450f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9448,6 +9477,7 @@ MonoBehaviour:
   wpuText: {fileID: 530593368}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 1
   isPlayerResource: 0
 --- !u!61 &637085257
@@ -9575,6 +9605,7 @@ MonoBehaviour:
   wpuText: {fileID: 530593368}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 1
   isPlayerResource: 0
 --- !u!61 &646479478
@@ -10330,7 +10361,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -3, y: -4}
-  m_SizeDelta: {x: 54.21, y: 30.01}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &729730216
 MonoBehaviour:
@@ -11173,7 +11204,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -2, y: -1}
-  m_SizeDelta: {x: 57.65, y: 24.01}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &806430292
 GameObject:
@@ -11668,11 +11699,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources:
   - {fileID: 11400000, guid: 9b62b458d0ce885488487a2929cfab46, type: 2}
+  - {fileID: 11400000, guid: 68e8c69ec8ea58b4d859867512a52f50, type: 2}
+  - {fileID: 11400000, guid: 3cf4df72e61725a4083c539821065195, type: 2}
+  - {fileID: 11400000, guid: 00c7d549868f65b489b6c28a7ef62c59, type: 2}
+  - {fileID: 11400000, guid: ff1b5054c02049443a1559f81d8a40e9, type: 2}
+  - {fileID: 11400000, guid: 46eaab6900bbdc04cb1578e351e03cf5, type: 2}
+  - {fileID: 11400000, guid: b090ab334bea4c143a4704ed64637528, type: 2}
+  - {fileID: 11400000, guid: c7aa19b9ad4ad2541a7c9b84db7a281a, type: 2}
+  - {fileID: 11400000, guid: 0c05f75be194bc94e8e38c55b443c222, type: 2}
+  - {fileID: 11400000, guid: ee3a22b78395f8b4b9caaa35596e801d, type: 2}
+  - {fileID: 11400000, guid: e6bd5d809e95feb45a39c3a118a63757, type: 2}
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
-  - {fileID: 11400000, guid: 30ccb9863417a6a4ab3e21d01faae3aa, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
+  - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
+  - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
+  materialRange: {x: 25, y: 92}
+  foodRange: {x: 25, y: 67}
+  luxuryRange: {x: 30, y: 50}
   uniqueRange: {x: 1, y: 20}
   player: {fileID: 1663645326}
   currentDemands: []
@@ -11693,7 +11735,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -11727,10 +11769,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CityName: Dennon
   CityFavor: 0
-  resources: []
-  resourceAmount: 000000000000000000000000
-  resourceReplenish: 000000000000000000000000
-  demandRate: 0
+  resources:
+  - {fileID: 11400000, guid: dc4752c6c26ea1848824ce6fee79a8a9, type: 2}
+  - {fileID: 11400000, guid: 30ccb9863417a6a4ab3e21d01faae3aa, type: 2}
+  - {fileID: 11400000, guid: ddb3363b6ca7c3a4f8554c573e1a1615, type: 2}
+  resourceAmount: 1e0000002d00000050000000
+  resourceReplenish: 010000000800000007000000
+  demandRate: 1.5
   cityDemands: {fileID: 832194482}
   player: {fileID: 1663645326}
   cityNode: {fileID: 780707628}
@@ -11774,7 +11819,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7cfc8abb671627a4fbfd73be5e92450f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11901,9 +11946,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3cf4df72e61725a4083c539821065195, type: 2}
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
-  resourceAmount: 2c0100002c0100002c010000
-  resourceReplenish: 020000000200000002000000
-  demandRate: 0
+  resourceAmount: 14000000460000005a000000
+  resourceReplenish: 03000000090000000b000000
+  demandRate: 1.4
   cityDemands: {fileID: 875321252}
   player: {fileID: 1663645326}
   cityNode: {fileID: 806430295}
@@ -11947,7 +11992,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9d3eddbe575c4f045a63654ac37f828d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12033,7 +12078,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -12066,10 +12111,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee3a22b78395f8b4b9caaa35596e801d, type: 2}
   - {fileID: 11400000, guid: e6bd5d809e95feb45a39c3a118a63757, type: 2}
   - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 25, y: 75}
+  foodRange: {x: 65, y: 93}
+  luxuryRange: {x: 40, y: 57}
+  uniqueRange: {x: 1, y: 12}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -12752,7 +12797,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &929105154
 GameObject:
@@ -14089,7 +14134,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 2.6, y: -1}
-  m_SizeDelta: {x: 82.31, y: 24.01}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099672421 stripped
 MonoBehaviour:
@@ -14977,7 +15022,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1135191739
 GameObject:
@@ -15405,7 +15450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f249f67aad81a4b418142bf3aa8d0f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resource: {fileID: 0}
+  resource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   cityManager: {fileID: 67257370}
   player: {fileID: 1663645326}
   nameText: {fileID: 448237672}
@@ -15416,6 +15461,7 @@ MonoBehaviour:
   wpuText: {fileID: 122020255}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   isDemand: 0
   isPlayerResource: 1
 --- !u!61 &1151139842
@@ -16093,7 +16139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f249f67aad81a4b418142bf3aa8d0f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resource: {fileID: 0}
+  resource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   cityManager: {fileID: 67257370}
   player: {fileID: 1663645326}
   nameText: {fileID: 1473437249}
@@ -16104,6 +16150,7 @@ MonoBehaviour:
   wpuText: {fileID: 122020255}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   isDemand: 0
   isPlayerResource: 1
 --- !u!61 &1216521038
@@ -16692,7 +16739,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1248052726
 GameObject:
@@ -17642,7 +17689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f249f67aad81a4b418142bf3aa8d0f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resource: {fileID: 0}
+  resource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   cityManager: {fileID: 67257370}
   player: {fileID: 1663645326}
   nameText: {fileID: 1607352423}
@@ -17653,6 +17700,7 @@ MonoBehaviour:
   wpuText: {fileID: 122020255}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   isDemand: 0
   isPlayerResource: 1
 --- !u!1 &1302369081
@@ -18745,7 +18793,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 16.55, y: -1}
-  m_SizeDelta: {x: 107.39, y: 24.01}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401078272
 MonoBehaviour:
@@ -18936,7 +18984,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9d3eddbe575c4f045a63654ac37f828d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18966,9 +19014,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff1b5054c02049443a1559f81d8a40e9, type: 2}
   - {fileID: 11400000, guid: 46eaab6900bbdc04cb1578e351e03cf5, type: 2}
   - {fileID: 11400000, guid: b090ab334bea4c143a4704ed64637528, type: 2}
-  resourceAmount: f4010000c8000000c8000000
-  resourceReplenish: 020000000100000001000000
-  demandRate: 1.5
+  resourceAmount: 640000005a0000004b000000
+  resourceReplenish: 0c0000000600000004000000
+  demandRate: 1.3
   cityDemands: {fileID: 1412927765}
   player: {fileID: 1663645326}
   cityNode: {fileID: 148053783}
@@ -19046,7 +19094,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -19076,10 +19124,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
   - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 45, y: 67}
+  foodRange: {x: 50, y: 76}
+  luxuryRange: {x: 35, y: 50}
+  uniqueRange: {x: 0, y: 0}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -19745,6 +19793,7 @@ MonoBehaviour:
   wpuText: {fileID: 369820586}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!1 &1497570897
@@ -21075,7 +21124,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0.20000076, y: 4.8}
-  m_SizeDelta: {x: 93.99, y: 18.01}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1605598805
 GameObject:
@@ -21179,10 +21228,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e6bd5d809e95feb45a39c3a118a63757, type: 2}
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 30, y: 70}
+  foodRange: {x: 40, y: 80}
+  luxuryRange: {x: 0, y: 0}
+  uniqueRange: {x: 0, y: 0}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -21202,7 +21251,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -21240,9 +21289,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00c7d549868f65b489b6c28a7ef62c59, type: 2}
   - {fileID: 11400000, guid: 0c05f75be194bc94e8e38c55b443c222, type: 2}
   - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
-  resourceAmount: 000000000000000000000000
-  resourceReplenish: 000000000000000000000000
-  demandRate: 0
+  resourceAmount: 370000003c0000005a000000
+  resourceReplenish: 04000000080000000c000000
+  demandRate: 1.2
   cityDemands: {fileID: 1605598808}
   player: {fileID: 1663645326}
   cityNode: {fileID: 1202715016}
@@ -21286,7 +21335,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ab85accc576942248961d60793ecc813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21331,6 +21380,7 @@ MonoBehaviour:
   wpuText: {fileID: 530593368}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!61 &1606840728
@@ -21493,11 +21543,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 53.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 18.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2633890512982535550, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -21683,6 +21733,7 @@ MonoBehaviour:
   wpuText: {fileID: 38756141}
   inactiveButton: {fileID: 339513096}
   activeButton: {fileID: 487913684}
+  noneResource: {fileID: 0}
   isDemand: 1
   isPlayerResource: 0
 --- !u!61 &1619281344
@@ -21835,11 +21886,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 53.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 18.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2633890512982535550, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -22074,6 +22125,7 @@ MonoBehaviour:
   wpuText: {fileID: 38756141}
   inactiveButton: {fileID: 339513096}
   activeButton: {fileID: 487913684}
+  noneResource: {fileID: 0}
   isDemand: 1
   isPlayerResource: 0
 --- !u!114 &1634829329 stripped
@@ -22143,9 +22195,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b62b458d0ce885488487a2929cfab46, type: 2}
   - {fileID: 11400000, guid: 00c7d549868f65b489b6c28a7ef62c59, type: 2}
   - {fileID: 11400000, guid: ee3a22b78395f8b4b9caaa35596e801d, type: 2}
-  resourceAmount: 000000000000000000000000
-  resourceReplenish: 000000000000000000000000
-  demandRate: 0
+  resourceAmount: 050000002800000055000000
+  resourceReplenish: 01000000070000000d000000
+  demandRate: 1.6
   cityDemands: {fileID: 1650395364}
   player: {fileID: 1663645326}
   cityNode: {fileID: 1675507513}
@@ -22189,7 +22241,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e466763dc5dc23f4ebe52ef69ed716c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22275,7 +22327,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -22309,10 +22361,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
   - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 45, y: 95}
+  foodRange: {x: 65, y: 100}
+  luxuryRange: {x: 40, y: 85}
+  uniqueRange: {x: 1, y: 25}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -22542,7 +22594,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ab85accc576942248961d60793ecc813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22572,9 +22624,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7aa19b9ad4ad2541a7c9b84db7a281a, type: 2}
   - {fileID: 11400000, guid: 46eaab6900bbdc04cb1578e351e03cf5, type: 2}
   - {fileID: 11400000, guid: b090ab334bea4c143a4704ed64637528, type: 2}
-  resourceAmount: 000000000000000000000000
-  resourceReplenish: 000000000000000000000000
-  demandRate: 0
+  resourceAmount: 410000002300000032000000
+  resourceReplenish: 030000000500000003000000
+  demandRate: 1.3
   cityDemands: {fileID: 1656986005}
   player: {fileID: 1663645326}
   cityNode: {fileID: 1302369084}
@@ -22652,7 +22704,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -22683,10 +22735,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
   - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 50, y: 88}
+  foodRange: {x: 50, y: 72}
+  luxuryRange: {x: 30, y: 64}
+  uniqueRange: {x: 0, y: 0}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -22778,7 +22830,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 0b2538e464b56a64e84052f363b07eee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22882,7 +22934,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: bccdc77185d7fb841ab020390f96d712, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22929,14 +22981,14 @@ MonoBehaviour:
   buyAmountText: {fileID: 1534625643}
   playerPurse: {fileID: 1663645327}
   cargo: {fileID: 1663645328}
-  moveSpeed: 3
+  moveSpeed: 2
   buyText: {fileID: 1106495107}
   sellText: {fileID: 80531400}
   atLocationPanel: {fileID: 2062921751}
   notAtLocationPanel: {fileID: 1436601743}
   playerPanel: {fileID: 242183813}
   panelToggle: {fileID: 21637785}
-  currentResource: {fileID: 0}
+  currentResource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
 --- !u!114 &1663645327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22949,7 +23001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df3f58073225734888873eeb056457a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 10000
+  currentGold: 1000
   purseText: {fileID: 1593626408}
 --- !u!114 &1663645328
 MonoBehaviour:
@@ -22965,8 +23017,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources: []
   resourceAmount: 
-  minSpeed: 1
-  maxSpeed: 5
+  minSpeed: 0.25
+  maxSpeed: 1.75
   player: {fileID: 1663645326}
   maxWeight: 200
 --- !u!1 &1669921650
@@ -23472,10 +23524,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3dabd8ee32d8cb84691df214ee646802, type: 2}
   - {fileID: 11400000, guid: 449c3eff0147e524f8502d682df520b5, type: 2}
   - {fileID: 11400000, guid: 80709673bff253642af58b513344bbc7, type: 2}
-  materialRange: {x: 50, y: 100}
-  foodRange: {x: 50, y: 100}
-  luxuryRange: {x: 30, y: 75}
-  uniqueRange: {x: 1, y: 20}
+  materialRange: {x: 50, y: 72}
+  foodRange: {x: 50, y: 94}
+  luxuryRange: {x: 45, y: 63}
+  uniqueRange: {x: 1, y: 10}
   player: {fileID: 1663645326}
   currentDemands: []
   currentDemandCount: 
@@ -23495,7 +23547,7 @@ MonoBehaviour:
   clickedScale: 1.5
   panelTransform: {fileID: 480892283}
   onScreenPosition: {x: 0, y: -125}
-  offScreenPosition: {x: 0, y: -275}
+  offScreenPosition: {x: 0, y: -280}
   moveSpeed: 15
   originalSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -23514,7 +23566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0895d2643e5ef9941bf15a6e49f72b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: 1.2
+  hoverScale: 1.5
 --- !u!114 &1679380917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23533,9 +23585,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 68e8c69ec8ea58b4d859867512a52f50, type: 2}
   - {fileID: 11400000, guid: ddb3363b6ca7c3a4f8554c573e1a1615, type: 2}
   - {fileID: 11400000, guid: ff1b5054c02049443a1559f81d8a40e9, type: 2}
-  resourceAmount: 000000000000000000000000
-  resourceReplenish: 000000000000000000000000
-  demandRate: 0
+  resourceAmount: 14000000410000005a000000
+  resourceReplenish: 02000000090000000e000000
+  demandRate: 1.5
   cityDemands: {fileID: 1679380914}
   player: {fileID: 1663645326}
   cityNode: {fileID: 898100662}
@@ -23579,7 +23631,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ab85accc576942248961d60793ecc813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -23968,7 +24020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f249f67aad81a4b418142bf3aa8d0f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resource: {fileID: 0}
+  resource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   cityManager: {fileID: 67257370}
   player: {fileID: 1663645326}
   nameText: {fileID: 1387646382}
@@ -23979,6 +24031,7 @@ MonoBehaviour:
   wpuText: {fileID: 122020255}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   isDemand: 0
   isPlayerResource: 1
 --- !u!1001 &1717978204
@@ -24167,11 +24220,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 53.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 18.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2633890512982535550, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -24372,6 +24425,7 @@ MonoBehaviour:
   wpuText: {fileID: 38756141}
   inactiveButton: {fileID: 487913684}
   activeButton: {fileID: 339513096}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!61 &1719282380
@@ -24835,7 +24889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f249f67aad81a4b418142bf3aa8d0f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resource: {fileID: 0}
+  resource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   cityManager: {fileID: 67257370}
   player: {fileID: 1663645326}
   nameText: {fileID: 951565830}
@@ -24846,6 +24900,7 @@ MonoBehaviour:
   wpuText: {fileID: 122020255}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 11400000, guid: 1f58f65a34da47946b0ffdd64d77cfdf, type: 2}
   isDemand: 0
   isPlayerResource: 1
 --- !u!61 &1765691129
@@ -25667,6 +25722,7 @@ MonoBehaviour:
   wpuText: {fileID: 530593368}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 0
   isPlayerResource: 0
 --- !u!114 &1951131237 stripped
@@ -25959,7 +26015,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1973686191 stripped
 MonoBehaviour:
@@ -26088,11 +26144,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 53.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2230749654306016022, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 18.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2633890512982535550, guid: b10ed35340e6b9f4eb766ccc09182888, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -26278,6 +26334,7 @@ MonoBehaviour:
   wpuText: {fileID: 38756141}
   inactiveButton: {fileID: 339513096}
   activeButton: {fileID: 487913684}
+  noneResource: {fileID: 0}
   isDemand: 1
   isPlayerResource: 0
 --- !u!61 &2009350819
@@ -26651,7 +26708,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2036123459 stripped
 MonoBehaviour:
@@ -26742,6 +26799,7 @@ MonoBehaviour:
   wpuText: {fileID: 530593368}
   inactiveButton: {fileID: 0}
   activeButton: {fileID: 0}
+  noneResource: {fileID: 0}
   isDemand: 1
   isPlayerResource: 0
 --- !u!1 &2057590450
@@ -26877,7 +26935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2062921752
 RectTransform:
   m_ObjectHideFlags: 0

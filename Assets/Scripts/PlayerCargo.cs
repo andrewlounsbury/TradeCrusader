@@ -47,7 +47,7 @@ public class PlayerCargo : MonoBehaviour
                 }
             }
 
-            
+            player.SetSpeed(maxSpeed * (1 - (GetTotalWeight() / maxWeight)) + minSpeed);
 
             return true; 
         }
