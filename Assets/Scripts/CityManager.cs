@@ -10,17 +10,16 @@ public class CityManager : MonoBehaviour
     public string CityName;
     public int CityFavor = 0;
     //private variables
-    [SerializeField] public Dictionary<Resource, int> resourceList = new();
-    [SerializeField] public List<Resource> resources = new List<Resource>();
-    [SerializeField] public List<int> resourceAmount = new List<int>();
-    [SerializeField] private List<int> resourceReplenish = new List<int>();
-    
-    [SerializeField] public float demandRate;
-
-    [SerializeField] public CityDemands cityDemands; 
-    [SerializeField] private Player player;
-
+    public Dictionary<Resource, int> resourceList = new();
+    public List<Resource> resources = new List<Resource>();
+    public List<int> resourceAmount = new List<int>();
+    public float demandRate;
+    public CityDemands cityDemands; 
     public Node cityNode;
+    [SerializeField] private List<int> resourceReplenish = new List<int>();
+    [SerializeField] private Player player;
+    public string tradingPhrase;
+
     private List<int> resourceCap = new List<int>();
     //On start clone the scriptable objects data, so you can alter it without writing to disk
     private float timer = 24; 

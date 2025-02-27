@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Settings.unity
     guid: 5c3f4c49a6894de47be8a511a74d5e7b
+  - enabled: 0
+    path: Assets/Scenes/NarrativeSystem.unity
+    guid: e4fbdfc43b1142248967d34f2c3c238d
   m_configObjects: {}

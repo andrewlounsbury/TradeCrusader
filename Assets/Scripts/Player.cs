@@ -23,9 +23,8 @@ public class Player : MonoBehaviour
 
     public TMP_Text buyText;
     public TMP_Text sellText;
-    public GameObject atLocationPanel;
-    public GameObject notAtLocationPanel;
-    public GameObject playerPanel;
+    public BuySellPanel buyAndSellPanel;
+    public CityDialogue cityDialogue;
     public PanelToggle panelToggle;
 
     public Resource currentResource; 
@@ -41,8 +40,11 @@ public class Player : MonoBehaviour
     {
         MoveToTarget();
 
-        buyText.text = "Buy " + currentResource.name;
-        sellText.text = "Sell " + currentResource.name;
+        if(currentResource)
+        {
+            sellText.text = "Sell " + currentResource.name;
+            buyText.text = "Buy " + currentResource.name;
+        }
 
         locationDisplay.UpdateDisplayData();
 
@@ -51,7 +53,9 @@ public class Player : MonoBehaviour
 
     public PlayerPurse GetPlayerPurse() => playerPurse;
     public PlayerCargo GetPlayerCargo() => cargo;
-
+    public bool IsSelling() => !isBuying;
+    public bool ISBuying() => isBuying;
+    
     public void SetTargetNode(Node target)
     {
         if (isMoving)
@@ -91,13 +95,13 @@ public class Player : MonoBehaviour
         if (Vector3.Distance(transform.position, targetNode.transform.position) <= 0.01f)
         {
             isMoving = false;
-            notAtLocationPanel.SetActive(false);
-            playerPanel.SetActive(false);
-            atLocationPanel.SetActive(true);
+            DynamicPanelManager.Instance.ActivateDialoguePanel();
             BFS.PathChart.Clear();
             panelToggle.isMoving = true; 
             panelToggle.OpenPanel();
-            locationDisplay.SelectCity(targetNode.GetComponentInChildren<CityManager>()); 
+            buyAndSellPanel.currentCity = targetNode.GetComponentInChildren<CityManager>();
+            cityDialogue.SetDialogueTree(targetNode.GetComponentInChildren<DialogueTree>());
+            cityDialogue.SetText();
         }
 
     }

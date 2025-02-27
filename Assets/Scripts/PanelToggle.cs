@@ -10,6 +10,7 @@ public class PanelToggle : MonoBehaviour
     public float moveSpeed = 5.0f;
 
     private bool isOnScreen = false;
+    private Vector3 localScale;
     public bool isMoving = false;
     //public float targetY = 1f;
 
@@ -20,7 +21,8 @@ public class PanelToggle : MonoBehaviour
 
         isMoving = false;
 
-        Vector3 currentPosition = transform.position; 
+        Vector3 currentPosition = transform.position;
+        localScale = transform.localScale;
 
     }
 
@@ -57,16 +59,19 @@ public class PanelToggle : MonoBehaviour
 
         if (isMoving)
         {
+            Vector3 tempScale;
             if (isOnScreen)
             {
                 MovePanel(offScreenPosition);
-                gameObject.transform.localScale = new Vector3(65, 30, 0);
+                tempScale = new Vector3(localScale.x, localScale.y, localScale.z);
             }
             else
             {
                 MovePanel(onScreenPosition);
-                gameObject.transform.localScale = new Vector3(65, -30, 0);
+                tempScale = new Vector3(localScale.x, localScale.y * -1, localScale.z);
             }
+
+            transform.localScale = tempScale;
         }
     }
 

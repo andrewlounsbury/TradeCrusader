@@ -3,15 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CityInventory : MonoBehaviour
 {
     [SerializeField] private Color baseSlotColor;
     public List <ResourceDisplay> inventorySlots;
     public CityManager cityManager;
+    public TMP_Text resourceName;
 
-    public void SetResourceDsiplay()
+    public void SetResourceDisplay()
     {
+        foreach (ResourceDisplay resource in inventorySlots)
+        {
+            resource.isDemand = false;
+        }
+
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             Image slot = inventorySlots[i].GetComponent<Image>();
@@ -36,6 +43,11 @@ public class CityInventory : MonoBehaviour
 
     public void SetDemandsDisplay()
     {
+        foreach(ResourceDisplay resource in inventorySlots)
+        {
+            resource.isDemand = true;
+        }
+
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             Image slot = inventorySlots[i].GetComponent<Image>();

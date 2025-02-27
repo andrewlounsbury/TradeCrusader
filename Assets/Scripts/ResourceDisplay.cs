@@ -19,6 +19,7 @@ public class ResourceDisplay : MonoBehaviour
     public TMP_Text amountTextBuyPanel;
     public TMP_Text amountTextSellPanel;
     public TMP_Text wpuText;
+    public TMP_Text selectedNameText;
 
     [SerializeField] private GameObject inactiveButton;
     [SerializeField] private GameObject activeButton;
@@ -49,19 +50,27 @@ public class ResourceDisplay : MonoBehaviour
             {
                 if (isDemand) // SELLING INVENTORY 
                 {
+                    int playerIndex = cityManager.cityDemands.currentDemands.IndexOf(player.currentResource);
                     int index = cityManager.cityDemands.currentDemands.IndexOf(resource);
 
-                    if (index < 0) return;
+                    if (playerIndex < 0) return;
 
                     amountText.text = cityManager.cityDemands.currentDemandCount[index].ToString();
-                    amountTextBuyPanel.text = cityManager.cityDemands.currentDemandCount[index].ToString();
-                    amountTextSellPanel.text = cityManager.cityDemands.currentDemandCount[index].ToString();
+
+                    amountTextBuyPanel.text = cityManager.cityDemands.currentDemandCount[playerIndex].ToString();
+                    amountTextSellPanel.text = cityManager.cityDemands.currentDemandCount[playerIndex].ToString();
+                    
+                    if(player.currentResource && selectedNameText)
+                        selectedNameText.text = "Sell " + player.currentResource.name;
                 }
                 else // BUYING INVENTORY 
                 {
                     amountText.text = cityManager.ResourceAmount(resource).ToString();
                     amountTextBuyPanel.text = cityManager.ResourceAmount(player.currentResource).ToString();
                     amountTextSellPanel.text = player.ResourceAmount(player.currentResource).ToString();
+
+                    if (player.currentResource && selectedNameText)
+                        selectedNameText.text = "Buy " + player.currentResource.name;
                 }
             }
             else // PLAYER INVENTORY 
@@ -73,8 +82,9 @@ public class ResourceDisplay : MonoBehaviour
                     resource = noneResource;
                     GetComponent<Image>().sprite = null;
                 }
+                nameText.text = resource.name;
             }
-            nameText.text = resource.name;
+
 
 
         }
@@ -103,7 +113,7 @@ public class ResourceDisplay : MonoBehaviour
     }
 
     private void OnMouseDown()
-    {
+    { 
         player.currentResource = resource;
     }
 

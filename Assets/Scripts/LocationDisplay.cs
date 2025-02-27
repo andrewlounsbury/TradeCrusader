@@ -41,10 +41,18 @@ public class LocationDisplay : MonoBehaviour
         if (currentCity)
             locationName.text = currentCity.CityName;
         //favor.Image = currentCity.CityFavor.ToString();
+        
+        if(currentCity && player.GetCurrentNode() != currentCity.cityNode)
+        {
+            inventory.SetResourceDisplay();
+            demandsInventory.SetDemandsDisplay();
+            return;
+        }
 
-        inventory.SetResourceDsiplay();
+        if(player.ISBuying())
+            inventory.SetResourceDisplay();
 
-        if (demandsInventory)
+        if (demandsInventory && player.IsSelling())
         {
             demandsInventory.SetDemandsDisplay();
         }

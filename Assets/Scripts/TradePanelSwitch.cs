@@ -20,21 +20,31 @@ public class TradePanelSwitch : MonoBehaviour
 
     public void OpenBuy()
     {
-        panelToOpen.SetActive(true);
-        panelToClose.SetActive(false);
-        buttonToShow.SetActive(true);
-        buttonToHide.SetActive(false);
-        buttonToHide2.SetActive(false);
+        DynamicPanelManager.Instance.ActivatePanel(panelToOpen);
+
+        if(buttonToShow)
+            buttonToShow.SetActive(true);
+    
+        if(buttonToHide)
+            buttonToHide.SetActive(false);
+        
+        if(buttonToHide2)
+            buttonToHide2.SetActive(false);
     }
 
 
     public void OpenSell()
     {
-        panelToOpen.SetActive(true);
-        panelToClose.SetActive(false);
-        buttonToShow.SetActive(true);
-        buttonToHide.SetActive(false);
-        buttonToHide2.SetActive(false);
+        DynamicPanelManager.Instance.ActivatePanel(panelToClose);
+        
+        if (buttonToShow)
+            buttonToShow.SetActive(true);
+        
+        if (buttonToHide)
+            buttonToHide.SetActive(false);
+        
+        if (buttonToHide2)
+            buttonToHide2.SetActive(false);
     }
 
 /*    public void Cancel()

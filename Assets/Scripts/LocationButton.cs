@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class LocationButton : MonoBehaviour
 {
-    [SerializeField] private GameObject playerPanel;
-    [SerializeField] private GameObject locationPanel;
-    [SerializeField] private GameObject atLocationPanel;
+
     [SerializeField] private Player player;
     [SerializeField] private LocationDisplay locationDisplay;
     [SerializeField] private GameObject buttonToShow;
@@ -14,20 +12,6 @@ public class LocationButton : MonoBehaviour
     /*public float hoverScale = 1.2f;
     private Vector3 originalScale;
     private Color selectedColor;*/
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-        playerPanel.SetActive(false);
-        locationPanel.SetActive(false);
-        atLocationPanel.SetActive(false);
-        //originalScale = transform.localScale;
-    }
-
-    void OnMouseEnter()
-    {
-        //transform.localScale = originalScale * hoverScale;
-    }
 
     public void Selected()
     {
@@ -38,16 +22,12 @@ public class LocationButton : MonoBehaviour
     {
         if (player.GetCurrentNode() == locationDisplay.currentCity.cityNode)
         {
-            playerPanel.SetActive(false);
-            locationPanel.SetActive(false);
-            atLocationPanel.SetActive(true);
+            DynamicPanelManager.Instance.ActiveBuySellPanel();
             buttonToShow.SetActive(true);
         }
         else
         {
-            playerPanel.SetActive(false);
-            locationPanel.SetActive(true);
-            atLocationPanel.SetActive(false);
+            DynamicPanelManager.Instance.ActivateLocationSelectPanel();
             buttonToShow.SetActive(true);
         }
        // transform.localScale = originalScale;
